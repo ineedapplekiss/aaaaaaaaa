@@ -5,6 +5,7 @@ class shang
     public function __construct()
     {
         echo "asd";
+        echo "bbb";
     }
 }
 
