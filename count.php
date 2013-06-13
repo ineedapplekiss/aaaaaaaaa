@@ -1,4 +1,7 @@
 <?php
+//------------------------------------------------------------
+//求总数用的数组
+//------------------------------------------------------------
 $arr = array(
 	array(37),
 	array(2,11),
@@ -52,8 +55,9 @@ $arr = array(
 	array(5,9),
 );
 
-
-
+//------------------------------------------------------------
+//模拟数据库数据，批量生成url
+//------------------------------------------------------------
 $arr = array(
 	'chuwei' => array(
 		'brand' => array('diwei','dc2','toto'),
@@ -62,6 +66,13 @@ $arr = array(
 		'c'		=> array(0,1),
 	)
 );
+//------------------------------------------------------------
+//遍历数组
+//------------------------------------------------------------
+foreach ($arr as $a_k => $a_v) {
+	//处理单个分类的数据
+	d(array() , $a_v , $a_k);
+}
 
 /**
  * 生成url function
@@ -87,32 +98,29 @@ function createUrl($arr , $cate='cate')
 	return $url;
 }
 
-echo createUrl($arr['chuwei'],'chuwei');
-
-exit;
-
-
-$i=0;
-
-while($res = array_shift($arr))
-{
-	$i+= getcount($res);
-}
-echo $i;
-
 /**
- * 求排列组合的总数 function
+ * 批处理一个分类下的所有数据 function
  *
- * @return void
+ * @return next 
  * @author zhiliang
  **/
-function getcount($arr)
+function d($url_arr , $arr , $cate)
 {
-	$num = 1;
-	foreach ($arr as $value) {
-		$num *= ($value+1);
+	if(is_array($arr))
+	{
+		foreach ($arr as $key => $value) {
+			$url_arr[$key] = array_shift($arr[$key]);
+			if(empty($arr[$key]))unset($arr[$key]);
+			if(next($arr))
+			{
+				$tmp_arr = $arr;
+				array_shift($tmp_arr);
+				d($url_arr,$tmp_arr,$cate);
+			}
+			break;
+		}
+		
 	}
-	return $num-1;
+	return false;
 }
-
 ?>
