@@ -53,8 +53,9 @@ $arr = array(
 );
 
 
+
 $arr = array(
-	array(
+	'chuwei' => array(
 		'brand' => array('diwei','dc2','toto'),
 		'a' 	=> array(0,1,2,3),
 		'b'		=> array(0,1),
@@ -63,15 +64,32 @@ $arr = array(
 );
 
 /**
- * undocumented function
+ * 生成url function
  *
  * @return void
  * @author zhiliang
  **/
-function creatUrl($arr)
+function createUrl($arr , $cate='cate')
 {
-
+	$url = 'http://www.jiaju.com/c-'.$cate;
+	$brand = is_array($arr['brand']) ? array_shift($arr['brand']) : $arr['brand'];
+	$url .= isset($arr['brand']) ? '/'.$brand.'/' : "/all/";
+	unset($arr['brand']);
+	ksort($arr);
+	if($arr)
+	{
+		foreach ($arr as $key => $value) {
+			$value = is_array($value) ? array_shift($value) : $value;
+			$arr[$key] = $key.$value;
+		}
+		$url .= implode("-",$arr);
+	}
+	return $url;
 }
+
+echo createUrl($arr['chuwei'],'chuwei');
+
+exit;
 
 
 $i=0;
