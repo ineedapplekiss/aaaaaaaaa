@@ -106,21 +106,27 @@ function createUrl($arr , $cate='cate')
  **/
 function d($url_arr , $arr , $cate)
 {
-	if(is_array($arr))
+	if(next($arr))
 	{
 		foreach ($arr as $key => $value) {
-			$url_arr[$key] = array_shift($arr[$key]);
-			if(empty($arr[$key]))unset($arr[$key]);
-			if(next($arr))
-			{
-				$tmp_arr = $arr;
-				array_shift($tmp_arr);
+			$tmp_arr = $arr;
+			array_shift($tmp_arr);
+			foreach ($value as $v) {
+				$url_arr[$key] = $v;
+				echo createUrl($url_arr,$cate)."<br>";
 				d($url_arr,$tmp_arr,$cate);
-			}
+			}			
 			break;
 		}
-		
 	}
-	return false;
+	else
+	{
+		foreach ($arr as $key => $value) {
+			foreach ($value as $v) {
+				$url_arr[$key] = $v;
+				echo createUrl($url_arr,$cate)."<br>";
+			}
+		}
+	}
 }
 ?>
