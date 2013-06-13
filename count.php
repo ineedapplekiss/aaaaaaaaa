@@ -53,6 +53,26 @@ $arr = array(
 );
 
 
+$arr = array(
+	array(
+		'brand' => array('diwei','dc2','toto'),
+		'a' 	=> array(0,1,2,3),
+		'b'		=> array(0,1),
+		'c'		=> array(0,1),
+	)
+);
+
+/**
+ * undocumented function
+ *
+ * @return void
+ * @author zhiliang
+ **/
+function creatUrl($arr)
+{
+
+}
+
 
 $i=0;
 
