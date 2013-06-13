@@ -51,4 +51,30 @@ $arr = array(
 	array(1,1),
 	array(5,9),
 );
+
+
+
+$i=0;
+
+while($res = array_shift($arr))
+{
+	$i+= getcount($res);
+}
+echo $i;
+
+/**
+ * 求排列组合的总数 function
+ *
+ * @return void
+ * @author zhiliang
+ **/
+function getcount($arr)
+{
+	$num = 1;
+	foreach ($arr as $value) {
+		$num *= ($value+1);
+	}
+	return $num-1;
+}
+
 ?>
