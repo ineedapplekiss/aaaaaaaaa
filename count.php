@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * 要求：组合$arr数组内的元素值，生成url，将各种组合输出，正确值为179种
+ *
+ * 说明：$arr数组本为商品列表页的属性，参见http://www.jiaju.com/c-shuicaobxg/ ；具体链接生成规则也参考列表页
+ *
+ */
 //------------------------------------------------------------
 //模拟数据库数据，批量生成url
 //------------------------------------------------------------
@@ -53,46 +58,23 @@ function createUrl($arr , $cate='cate')
 function d($url_arr , $arr , $cate)
 {
 	$arr_count = count($arr);
+	$l = 1;
 	//组合各种url_arr
-	if($arr_count>1)
-	{
-		//递归
-	}
-
-
 	foreach ($arr as $key => $value) {
 		foreach ($value as $v) {
-			$url_arr = array();
-			$url_arr[$key] = $v;
-			echo createUrl($url_arr,$cate)."<br>";
+			$current_url_arr = array();
+			$current_url_arr[$key] = $v;
+			$url = array_merge($current_url_arr,$url_arr);
+			echo createUrl($url,$cate)."<br>";
+			//判断是否有剩余数据进行递归
+			if($l<$arr_count)
+			{
+				$surplus_arr = array_slice($arr,$l);
+				d($url,$surplus_arr,$cate);
+			}
 		}
+		$l++;
 	}
 	return false;
-
-	if(next($arr))
-	{
-		$tmp_arr = $arr;
-		array_shift($tmp_arr);
-		foreach ($arr as $key => $value) {
-			foreach ($value as $v) {
-				$url_arr[$key] = $v;
-				echo createUrl($url_arr,$cate)."<br>";
-				d($url_arr,$tmp_arr,$cate);
-			}
-		}
-	}
-	elseif(is_array($arr))
-	{
-		foreach ($arr as $key => $value) {
-			foreach ($value as $v) {
-				$url_arr[$key] = $v;
-				echo createUrl($url_arr,$cate)."<br>";
-			}
-		}
-	}
-	else
-	{
-		return false;
-	}
 }
 ?>
