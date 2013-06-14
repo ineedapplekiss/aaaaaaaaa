@@ -5,7 +5,8 @@ $arr = array(
 		'b'		=> array(0,1),
 		'c'		=> array(0,1),
 );
-var_dump( geturl( '', array_keys($arr) ) );
+echo "<pre>";
+print_r( geturl( '', array_keys($arr) ) );
 
 function geturl($prefix, $keys)
 {
@@ -36,9 +37,13 @@ function geturl($prefix, $keys)
 		{
 			$prefix_new = join_url($prefix, $key, $v);
 			$res = array_merge($res, geturl($prefix_new, $keys));
+			if($key != 'brand')
+			{
+				$res = array_merge($res, geturl($prefix, $keys));
+			}
 		}
 	}
-	return $res;
+	return array_unique($res);
 }
 
 function join_url($prefix, $key, $v, $last = false)
