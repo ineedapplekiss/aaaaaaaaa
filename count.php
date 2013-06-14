@@ -28,7 +28,7 @@ foreach ($arr as $a_k => $a_v) {
 function createUrl($arr , $cate='cate')
 {
 	$url = 'http://www.jiaju.com/c-'.$cate;
-	$brand = is_array($arr['brand']) ? array_shift($arr['brand']) : $arr['brand'];
+	$brand = isset($arr['brand']) && is_array($arr['brand']) ? array_shift($arr['brand']) : isset($arr['brand']) ? $arr['brand'] : 'all';
 	$url .= isset($arr['brand']) ? '/'.$brand.'/' : "/all/";
 	unset($arr['brand']);
 	ksort($arr);
@@ -52,17 +52,33 @@ function createUrl($arr , $cate='cate')
  **/
 function d($url_arr , $arr , $cate)
 {
+	$arr_count = count($arr);
+	//组合各种url_arr
+	if($arr_count>1)
+	{
+		//递归
+	}
+
+
+	foreach ($arr as $key => $value) {
+		foreach ($value as $v) {
+			$url_arr = array();
+			$url_arr[$key] = $v;
+			echo createUrl($url_arr,$cate)."<br>";
+		}
+	}
+	return false;
+
 	if(next($arr))
 	{
+		$tmp_arr = $arr;
+		array_shift($tmp_arr);
 		foreach ($arr as $key => $value) {
-			$tmp_arr = $arr;
-			array_shift($tmp_arr);
 			foreach ($value as $v) {
 				$url_arr[$key] = $v;
 				echo createUrl($url_arr,$cate)."<br>";
 				d($url_arr,$tmp_arr,$cate);
 			}
-			break;
 		}
 	}
 	elseif(is_array($arr))
