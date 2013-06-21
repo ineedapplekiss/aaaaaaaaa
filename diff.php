@@ -3,44 +3,71 @@
 set_time_limit(0);
 $runtime = 0;
 
+//--------------------------------------------------------
+// 开始时间，开始内存
+//--------------------------------------------------------
 m();
 $start_timestamp = microtime(true);
-$end = 1200;
 
-$f = fopen("test","w");
 
-$start = 1;
-while ($start < $end) {
-	$from_num  = $start;
-	$start++;
-	run($from_num , $start , $end);
+//--------------------------------------------------------
+// 模拟数组
+//--------------------------------------------------------
+$arr = array(
+	'cate1' => array(//分类下数据
+		array(11,12,13,14,15),//商铺下商品数据
+		array(21,22,23,24),
+		array(31,32,33,34)
+	),
+	'cate2' => array(
+		array(11,12,13,14,15),
+		array(21,22,23,24),
+		array(31,32,33,34)
+	),
+);
+foreach ($arr as $k => $v) {
+	while (list($s_pos,$s_val) = each($v)) {
+		while (list($g_pos,$g_val) = each($s_val)) {
+			run($s_pos,$g_pos,$v);
+		}
+	}
 }
-$end_timestamp = microtime(true);
 
+
+
+//--------------------------------------------------------
+// 内存和运行时间
+//--------------------------------------------------------
+$end_timestamp = microtime(true);
 m();
 mp();
 var_dump($start_timestamp,$end_timestamp);
 echo $runtime;
 
 /**
- * undocumented function
+ * 与给定位置之后的所有id生成url
  *
  * @return void
  * @author zhiliang
  **/
-function run($from_num , $start=1 , $end = 120)
+function run($shop_pos,$goods_pos,$cate_data)
 {
-	global $runtime,$f;
-	$output = '';
-	while ($start <= $end) {
-		$output = $from_num.'--'.$start."\n";
-		fwrite($f,$output);
-		$runtime++;
-		$start++;
+	$a_id = $cate_data[$shop_pos][$goods_pos];
+
+	while (list($s_pos,$s_val) = each($cate_data)) {
+		if($s_pos <= $shop_pos)continue;
+		while (list($g_pos,$g_val) = each($s_val)) {
+			echo url($a_id,$g_val);
+		}
 	}
 }
 
-fclose($f);
+function url($a_id,$b_id)
+{
+	global $runtime;
+	$runtime++;
+	return $a_id.'--'.$b_id."\n";
+}
 
 
 
