@@ -5,11 +5,12 @@ $runtime = 0;
 
 m();
 $start_timestamp = microtime(true);
-$end = 120000;
+$end = 1200;
+
+$f = fopen("test","w");
 
 $start = 1;
 while ($start < $end) {
-	$runtime++;
 	$from_num  = $start;
 	$start++;
 	run($from_num , $start , $end);
@@ -27,15 +28,19 @@ echo $runtime;
  * @return void
  * @author zhiliang
  **/
-function run($from_num , $start=1 , $end = 1200)
+function run($from_num , $start=1 , $end = 120)
 {
-	global $runtime;
+	global $runtime,$f;
+	$output = '';
 	while ($start <= $end) {
-		//echo $from_num.'--'.$start."\n";
+		$output = $from_num.'--'.$start."\n";
+		fwrite($f,$output);
 		$runtime++;
 		$start++;
 	}
 }
+
+fclose($f);
 
 
 
