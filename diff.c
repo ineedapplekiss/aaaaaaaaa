@@ -3,14 +3,15 @@ unsigned long int count=0;
 int overflow=0;
 int main()
 {
-    int sta,end,from_num;
+    register int sta;
+    int end,from_num;
     sta = 1;
     end = 90000;
-    while(sta<end)
+    while(sta<9000000)
     {
-        from_num = sta;
+        //from_num = sta;
         sta++;
-        w(from_num,sta,end);
+        //w(from_num,sta,end);
     }
     printf("finish:%d * 2000000000 +  %d \n" , overflow , count);
     return 1;
