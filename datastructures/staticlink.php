@@ -9,7 +9,7 @@ class StaticLink
 	 * array(
 	 	firstNode
 	 		data
-	 		next
+	 		next 指向未使用的空节点
 
 	 	node
 	 		data
@@ -17,10 +17,10 @@ class StaticLink
 
 	 	lastNode
 	 		data
-	 		next 0
+	 		next 指向链表的第一个节点
 	 )
 	 */
-	public $data;
+	private $data;
 
 	//--------------------------------------------------------
 	// 链表最大长度
@@ -134,13 +134,3 @@ class StaticLink
 		$this->data[0]['next'] = $i;
 	}
 }
-echo "<pre>";
-$slink = new StaticLink(1000);
-print($slink->listLength());
-$slink->listInsert("aaa");
-$slink->listInsert("bbb");
-$slink->listInsert("ccc",2);
-$slink->listInsert("dddd",2);
-
-$slink->listDel(2);
-print_r($slink->data);
