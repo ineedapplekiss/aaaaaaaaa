@@ -20,7 +20,7 @@ class StaticLink
 	 		next 0
 	 )
 	 */
-	private $data;
+	public $data;
 
 	//--------------------------------------------------------
 	// 链表最大长度
@@ -30,11 +30,11 @@ class StaticLink
 	public function __construct($length = 1000)
 	{
 		$this->maxSize = $length;
-		$this->data = new SplFixedArray($length);
+		$this->data = array();
 		for ($i=0; $i < $length-1; $i++) {
-			$this->data[$i]['next'] = $i+1;
+			$this->data[$i] = array('next'=>$i+1,'data'=>'');
 		}
-		$this->data[$length-1]['next'] = 0;
+		$this->data[$length-1] = array('next'=>0,'data'=>'');
 		return true;
 	}
 
@@ -67,7 +67,6 @@ class StaticLink
 		if($i<1 || $i > $this->listLength()+1)return false;
 
 		$newIndex = $this->malloc();
-
 		//给节点赋值
 		$this->data[$newIndex]['data'] = $data;
 
@@ -76,9 +75,33 @@ class StaticLink
 		for ($l=1; $l < $i; $l++) {
 			$k = $this->data[$k]['next'];
 		}
+		$this->data[$newIndex]['next'] = $this->data[$k]['next'];
+		$this->data[$k]['next'] = $newIndex;
+		return true;
+	}
 
-		$this->data[$newIndex]['next'] = '';
+	/**
+	 * 删除一个节点
+	 *
+	 * @param $i是链表的序，不是数组下标
+	 * @return void
+	 * @author zhiliang
+	 **/
+	public function listDel($i)
+	{
+		if($i<1 || $i > $this->listLength())return false;
 
+		//找到$i的前一个元素下标
+		$k = $this->maxSize-1;
+		for ($l=1; $l < $i; $l++) {
+			$k = $this->data[$k]['next'];
+		}
+		$listIndex = $this->data[$k]['next'];//找到要释放的数组下标
+
+		$this->data[$k]['next'] = $this->data[$listIndex]['next'];
+		$this->free($listIndex);
+		$this->data[$listIndex]['data'] = '';
+		return true;
 	}
 
 
@@ -111,6 +134,13 @@ class StaticLink
 		$this->data[0]['next'] = $i;
 	}
 }
-
+echo "<pre>";
 $slink = new StaticLink(1000);
-print($slink->getLength());
+print($slink->listLength());
+$slink->listInsert("aaa");
+$slink->listInsert("bbb");
+$slink->listInsert("ccc",2);
+$slink->listInsert("dddd",2);
+
+$slink->listDel(2);
+print_r($slink->data);

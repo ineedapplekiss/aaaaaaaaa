@@ -6,22 +6,28 @@ header("Content-type:text/html;charset=utf-8");
 
 m();
 
-$elements = 20;
-for($size = 1000; $size < 5000000; $size *= 2) {
-    echo PHP_EOL . "Testing size: $size" . PHP_EOL;
-    for($s = microtime(true), $i = 0 , $container=array(); $i < $size; $i++) {
-            $container[$i] = NULL;
-    }
-    echo "Array(): " . (microtime(true) - $s) . PHP_EOL;
-    m();
+/**
+* test
+*/
+class test
+{
+	public $data;
+	public function __construct($num,$v)
+	{
+		$this->data = new SplFixedArray(6);
+		$this->data[5][$num] = $v;
+	}
+	public function show()
+	{
+		var_dump($this->data);
+	}
 
-    for($s = microtime(true), $i = 0,$container=new SplFixedArray($size); $i < $size; $i++) {
-            $container[$i] = NULL;
-    }
-    echo "SplArray(): " . (microtime(true) - $s) . PHP_EOL;
-    m();
+
 }
 
+$a = new test('aa',33);
+
+$a->show();
 
 function m()
 {
