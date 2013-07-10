@@ -6,7 +6,7 @@ require 'stack.php';
  */
 class rpn
 {
-	private $me,$re;//中缀表达式和后缀表达式的队列
+	public $me,$re;//中缀表达式和后缀表达式的队列
 
 	private $config = array(
 		'(' => 30,
@@ -80,7 +80,11 @@ class rpn
 					{
 						$this->re->enqueue($top);
 						while ($d = $rStack->pop()) {
-							if(in_array('(',array($top,$value)) || ($this->config[$value] > $this->config[$d]))break;
+							if(in_array('(',array($d,$value)) || ($this->config[$value] > $this->config[$d]))
+							{
+								$rStack->push($d);
+								break;
+							}
 							$this->re->enqueue($d);
 						}
 						$rStack->push($value);
@@ -146,8 +150,7 @@ class rpn
 	}
 }
 
-$exp = "9*(3-1)*3+10/2";
+$exp = "9+(3-(1*4-(2+5)*6))*3+10/2";
 $rpn = new rpn($exp);
-echo "<pre>";
 echo $e = $rpn->run();
 
