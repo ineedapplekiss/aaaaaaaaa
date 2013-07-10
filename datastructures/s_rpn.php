@@ -6,7 +6,7 @@ require 'stack.php';
  */
 class rpn
 {
-	private $me,$re;
+	private $me,$re;//中缀表达式和后缀表达式的队列
 
 	private $config = array(
 		'(' => 30,
@@ -44,6 +44,12 @@ class rpn
 	/**
 	 * 中缀转后缀表达式
 	 *
+	 * 算法描述:遍历中缀表达式，遇数字进队列，
+	 * 遇符号，
+	 * 		若反括弧，出栈，进队列，
+	 *		若正括弧进栈，
+	 * 		判断与栈顶符号优先级，不高于栈顶符号的，栈顶元素出栈入队列（与栈内元素依次比较），当前符号进栈
+	 *
 	 * @return void
 	 * @author zhiliang
 	 **/
@@ -70,38 +76,78 @@ class rpn
 				else
 				{
 					$top = $rStack->pop();
-					var_dump($value,$top,"=========>\n");
-					if($top && ($this->config[$value] <= $this->config[$top]))
+					if($top && !in_array('(',array($top,$value)) && ($this->config[$value] <= $this->config[$top]))
 					{
 						$this->re->enqueue($top);
+						while ($d = $rStack->pop()) {
+							if(in_array('(',array($top,$value)) || ($this->config[$value] > $this->config[$d]))break;
+							$this->re->enqueue($d);
+						}
 						$rStack->push($value);
 					}
-					else
+					elseif($top != false)
 					{
 						$rStack->push($top);
 						$rStack->push($value);
 					}
+					else
+					{
+						$rStack->push($value);
+					}
 				}
 			}
+		}
+		while ($d = $rStack->pop()) {
+			$this->re->enqueue($d);
 		}
 	}
 
 	/**
 	 * 后缀表达式求值
 	 *
+	 * 算法描述：遍历后缀表达式，遇到数字进栈，遇到符号，出栈两个数字进行运算(顺序为：栈底 运算符 栈顶)，将结果入栈
+	 *
 	 * @return void
 	 * @author zhiliang
 	 **/
 	public function run()
 	{
-		return $this->re;
+		$rStack = new stack($this->re->count());
+		foreach ($this->re as $value) {
+			if(is_numeric($value))
+			{
+				$rStack->push($value);
+			}
+			else
+			{
+				$rightOperand = $rStack->pop();
+				$leftOperand = $rStack->pop();
+				switch ($value) {
+					case '+':
+						$result = bcadd($leftOperand, $rightOperand, 10);
+						break;
+					case '-':
+						$result = bcsub($leftOperand, $rightOperand, 10);
+						break;
+					case '*':
+						$result = bcmul($leftOperand, $rightOperand, 10);
+						break;
+					case '/':
+						$result = bcdiv($leftOperand, $rightOperand, 10);
+						break;
+					default:
+						throw new Exception('operator error');
+						break;
+				}
+				$rStack->push($result);
+			}
+		}
+		return $rStack->pop();
 	}
 }
 
-$exp = "9123+(3-1)*3+10/2";
+$exp = "9*(3-1)*3+10/2";
 $rpn = new rpn($exp);
 echo "<pre>";
-$e = $rpn->run();
-foreach ($e as $key => $value) {
-	var_dump($key,$value);
-}
+echo $e = $rpn->run();
+

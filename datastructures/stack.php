@@ -67,4 +67,9 @@ class stack
 		return $ret;
 	}
 
+	public function show()
+	{
+		print_r($this->data);
+	}
+
 } // END Stack class
