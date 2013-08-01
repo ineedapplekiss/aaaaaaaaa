@@ -37,7 +37,11 @@ int main(void)
         {
             case -1: printf("unknow command \n");break;
             case 0: printf("how may i help u sir \n");break;
-            case 1: printf("i will say %s \n",&buf[3]);break;
+            case 1:
+            {
+                printf("i will say %s %x \n",&buf[3],&buf);
+                break;
+            }
             case 2: printf("hi \n");break;
             case 3: printf("see u later \n");ok=1;break;
             case 4: printf("go ahead! \n");ok=1;break;
