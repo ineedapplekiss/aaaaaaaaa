@@ -1,0 +1,9 @@
+#!/bin/bash
+echo -n "word 1:"
+read word1
+echo -n "word 2:"
+read word2
+echo -n "word 3:"
+read word3
+file="$((word2+word1))"
+echo "$file"

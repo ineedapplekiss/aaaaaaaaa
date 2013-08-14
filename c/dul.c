@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "dul.h"
 
-int main(void)
+LinkList InitList()
 {
-
-    printf("%d \n",OK);
-    return 0;
+    LinkList L={0,Null};
+    return LinkList;
 }
+

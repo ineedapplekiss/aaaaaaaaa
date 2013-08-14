@@ -1,11 +1,16 @@
 #include <stdio.h>
-//================================
-//test.c 
-//================================
-int main(void)
+#include <stdlib.h>
+
+int main(int argc,char *argv[])
 {
-    char str='c';
-    printf("%c %x \n",str,&str);
+    char *a;
+    if(argc < 2)
+    {
+        printf("Usage:file <url>;\n");
+        exit(1);
+    }
+    a = argv[2];
+    printf("c:%s \n",a);
     return 0;
 }
 

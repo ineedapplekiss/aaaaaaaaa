@@ -1,0 +1,315 @@
+# Copyright (c) 1993-1999 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          #hide
+#       38.25.63.10     x.acme.com              #hide
+127.0.0.1 shang-H61M-S2P-B3 #hide
+127.0.0.1       localhost #hide
+127.0.0.1       phpmyadmin.cn  #hide
+127.0.0.1       phpdoc.com  #hide
+127.0.0.1 activate.adobe.com #hide
+127.0.0.1 practivate.adobe.com #hide
+127.0.0.1 ereg.adobe.com #hide
+127.0.0.1 activate.wip3.adobe.com #hide
+127.0.0.1 wip3.adobe.com #hide
+127.0.0.1 3dns-3.adobe.com #hide
+127.0.0.1 3dns-2.adobe.com #hide
+127.0.0.1 adobe-dns.adobe.com #hide
+127.0.0.1 adobe-dns-2.adobe.com #hide
+127.0.0.1 adobe-dns-3.adobe.com #hide
+127.0.0.1 ereg.wip3.adobe.com #hide
+127.0.0.1 activate-sea.adobe.com #hide
+127.0.0.1 wwis-dubc1-vip60.adobe.com #hide
+74.125.91.113 groups.google.com #hide
+74.125.19.113 translate.google.com #hide
+74.125.19.113 spreadsheets.google.com #hide
+74.125.19.113 code.google.com #hide
+74.125.19.113 books.google.com #hide
+203.208.46.29 plus.google.com #hide
+203.208.46.29 talkgadget.google.com #hide
+203.208.46.29 picasaweb.google.com #hide
+203.208.46.29 lh1.ggpht.com #hide
+203.208.46.29 lh2.ggpht.com #hide
+203.208.46.29 lh3.ggpht.com #hide
+203.208.46.29 lh4.ggpht.com #hide
+203.208.46.29 lh5.ggpht.com #hide
+203.208.46.29 lh6.ggpht.com #hide
+203.208.46.29 lh6.googleusercontent.com #hide
+203.208.46.29 lh5.googleusercontent.com #hide
+203.208.46.29 lh4.googleusercontent.com #hide
+203.208.46.29 lh3.googleusercontent.com #hide
+203.208.46.29 lh2.googleusercontent.com #hide
+203.208.46.29 lh1.googleusercontent.com #hide
+
+#==== www.jiaju.com localhost
+#127.0.0.1 www.jiaju.com
+127.0.0.1  bj.jiaju.com
+127.0.0.1  sh.jiaju.com
+127.0.0.1  sz.jiaju.com
+127.0.0.1 jiaju.baidu.com
+127.0.0.1 baidu.jiaju.com
+10.207.0.239 s.jiaju.com
+#====
+
+#==== www.jiaju.com 58.83.214.222
+#58.83.214.222 www.jiaju.com
+#58.83.214.222  bj.jiaju.com
+#58.83.214.222  sh.jiaju.com
+#58.83.214.222  sz.jiaju.com
+#58.83.214.222 jiaju.baidu.com
+#58.83.214.222 baidu.jiaju.com
+#====
+
+#==== www.jiaju.com 60.28.244.100
+#60.28.244.100 www.jiaju.com
+#60.28.244.100  bj.jiaju.com
+#60.28.244.100  sh.jiaju.com
+#60.28.244.100  sz.jiaju.com
+#60.28.244.100 jiaju.baidu.com
+#60.28.244.100 baidu.jiaju.com
+#====
+
+#==== www.jiaju.com 10.207.0.240
+#10.207.0.240 www.jiaju.com
+#10.207.0.240  bj.jiaju.com
+#10.207.0.240  sh.jiaju.com
+#10.207.0.240  sz.jiaju.com
+#10.207.0.240 jiaju.baidu.com
+#10.207.0.240 baidu.jiaju.com
+#====
+
+#admin.jiaju.com
+60.28.113.124 admin.jiaju.com
+#127.0.0.1  admin.jiaju.com
+#10.207.0.240 admin.jiaju.com
+#10.207.0.233 admin.jiaju.com
+
+
+#i.jiaju.sina.com.cn
+#60.28.228.21 i.jiaju.sina.com.cn
+#127.0.0.1 i.jiaju.sina.com.cn
+#60.28.244.100 i.jiaju.sina.com.cn
+#121.14.32.212 i.jiaju.sina.com.cn
+#10.71.32.212 i.jiaju.sina.com.cn
+10.210.74.89 wiki.intra.weibo.com
+10.210.74.89 wiki.sina.com.cn
+
+#60.28.228.21 tuan.jiaju.com
+#127.0.0.1 tuan.jiaju.com
+
+10.207.0.240 static_240.jiaju.com
+#58.83.214.222 static.jiaju.com static1.jiaju.com static2.jiaju.com static3.jiaju.com static4.jiaju.com static5.jiaju.com min.static.jiaju.com
+#10.207.0.233 static.jiaju.com static1.jiaju.com static2.jiaju.com static3.jiaju.com static4.jiaju.com static5.jiaju.com min.static.jiaju.com
+#127.0.0.1 static.jiaju.com static1.jiaju.com static2.jiaju.com static3.jiaju.com static4.jiaju.com static5.jiaju.com min.static.jiaju.com
+
+
+
+10.207.0.32 svn.intra.leju.com
+
+60.28.113.124 admin.i.jiaju.sina.com.cn
+
+#10.207.61.180  jiancai.jiaju.sina.com.cn
+#60.28.228.21  jiancai.jiaju.sina.com.cn
+
+
+#10.207.0.237 static.jiaju.com static1.jiaju.com static2.jiaju.com static3.jiaju.com static4.jiaju.com static5.jiaju.com
+#10.207.10.253 static.jiaju.com static1.jiaju.com static2.jiaju.com static3.jiaju.com static4.jiaju.com static5.jiaju.com
+
+
+#10.207.0.237 admin.jiaju.com
+
+10.207.0.239 c.test.api.search.jiaju.com
+10.207.0.239 a.test.api.search.jiaju.com
+
+
+#10.207.0.233 v1pai.jiaju.com
+
+#127.0.0.1 bbs.jiaju.com bbs.jiaju.sina.com.cn api.bbs.jiaju.sina.com.cn
+#60.28.228.21 bbs.jiaju.com bbs.jiaju.sina.com.cn
+#10.207.10.253 bbs.jiaju.com bbs.jiaju.sina.com.cn
+#121.14.32.195 bbs.jiaju.com bbs.jiaju.sina.com.cn
+#121.14.32.194 bbs.jiaju.com bbs.jiaju.sina.com.cn
+#121.14.32.193 bbs.jiaju.com bbs.jiaju.sina.com.cn
+#121.14.32.192 bbs.jiaju.com bbs.jiaju.sina.com.cn
+#121.14.32.191 bbs.jiaju.com bbs.jiaju.sina.com.cn
+#60.28.244.215 bbs.jiaju.com bbs.jiaju.sina.com.cn
+#60.28.228.21 main.bbs.house.sina.com.cn
+#127.0.0.1 main.bbs.house.sina.com.cn
+
+#127.0.0.1 bj.bbs.jiaju.sina.com.cn
+#127.0.0.1 cd.bbs.jiaju.sina.com.cn
+#127.0.0.1 cq.bbs.jiaju.sina.com.cn
+#127.0.0.1 dl.bbs.jiaju.sina.com.cn
+#127.0.0.1 h.bbs.jiaju.sina.com.cn
+#127.0.0.1 wh.bbs.jiaju.sina.com.cn
+#127.0.0.1 cs.bbs.jiaju.sina.com.cn
+#127.0.0.1 zz.bbs.jiaju.sina.com.cn
+#127.0.0.1 nj.bbs.jiaju.sina.com.cn
+#127.0.0.1 nt.bbs.jiaju.sina.com.cn
+#127.0.0.1 sjz.bbs.jiaju.sina.com.cn
+#127.0.0.1 hz.bbs.jiaju.sina.com.cn
+#127.0.0.1 taizhou.bbs.jiaju.sina.com.cn
+#127.0.0.1 zhuhai.bbs.jiaju.sina.com.cn
+#127.0.0.1 sy.bbs.jiaju.sina.com.cn
+#127.0.0.1 cc.bbs.jiaju.sina.com.cn
+#127.0.0.1 wenzhou.bbs.jiaju.sina.com.cn
+#127.0.0.1 shanxi.bbs.jiaju.sina.com.cn
+#127.0.0.1 qd.bbs.jiaju.sina.com.cn
+#127.0.0.1 nb.bbs.jiaju.sina.com.cn
+#127.0.0.1 shaoxing.bbs.jiaju.sina.com.cn
+#127.0.0.1 xian.bbs.jiaju.sina.com.cn
+#127.0.0.1 hhht.bbs.jiaju.sina.com.cn
+#127.0.0.1 tangshan.bbs.jiaju.sina.com.cn
+#127.0.0.1 anshan.bbs.jiaju.sina.com.cn
+#127.0.0.1 jinan.bbs.jiaju.sina.com.cn
+#127.0.0.1 gy.bbs.jiaju.sina.com.cn
+#127.0.0.1 tj.bbs.jiaju.sina.com.cn
+#127.0.0.1 cz.bbs.jiaju.sina.com.cn
+#127.0.0.1 wx.bbs.jiaju.sina.com.cn
+#127.0.0.1 hf.bbs.jiaju.sina.com.cn
+#127.0.0.1 jx.bbs.jiaju.sina.com.cn
+#127.0.0.1 yibin.bbs.jiaju.sina.com.cn
+#127.0.0.1 luzhou.bbs.jiaju.sina.com.cn
+#127.0.0.1 leshan.bbs.jiaju.sina.com.cn
+#127.0.0.1 mianyang.bbs.jiaju.sina.com.cn
+#127.0.0.1 nanchong.bbs.jiaju.sina.com.cn
+#127.0.0.1 jining.bbs.jiaju.sina.com.cn
+#127.0.0.1 fushun.bbs.jiaju.sina.com.cn
+#127.0.0.1 panjin.bbs.jiaju.sina.com.cn
+#127.0.0.1 yangquan.bbs.jiaju.sina.com.cn
+#127.0.0.1 fz.bbs.jiaju.sina.com.cn
+#127.0.0.1 dazhou.bbs.jiaju.sina.com.cn
+#127.0.0.1 neijiang.bbs.jiaju.sina.com.cn
+#127.0.0.1 zigong.bbs.jiaju.sina.com.cn
+#127.0.0.1 pzh.bbs.jiaju.sina.com.cn
+#127.0.0.1 deyang.bbs.jiaju.sina.com.cn
+#127.0.0.1 guangyuan.bbs.jiaju.sina.com.cn
+#127.0.0.1 suining.bbs.jiaju.sina.com.cn
+#127.0.0.1 meishan.bbs.jiaju.sina.com.cn
+#127.0.0.1 guangan.bbs.jiaju.sina.com.cn
+#127.0.0.1 yaan.bbs.jiaju.sina.com.cn
+#127.0.0.1 bazhong.bbs.jiaju.sina.com.cn
+#127.0.0.1 ziyang.bbs.jiaju.sina.com.cn
+#127.0.0.1 baoding.bbs.jiaju.sina.com.cn
+#127.0.0.1 xintai.bbs.jiaju.sina.com.cn
+#127.0.0.1 handan.bbs.jiaju.sina.com.cn
+#127.0.0.1 benxi.bbs.jiaju.sina.com.cn
+#127.0.0.1 bj.bbs.jiaju.sina.com.cn
+#127.0.0.1 luoyang.bbs.jiaju.sina.com.cn
+#127.0.0.1 zhanjiang.bbs.jiaju.sina.com.cn
+#127.0.0.1 sh.bbs.jiaju.sina.com.cn
+#127.0.0.1 gz.bbs.jiaju.sina.com.cn
+#127.0.0.1 sz.bbs.jiaju.sina.com.cn
+#127.0.0.1 suzhou.bbs.jiaju.sina.com.cn
+#127.0.0.1 yc.bbs.jiaju.sina.com.cn
+#127.0.0.1 weifang.bbs.jiaju.sina.com.cn
+#127.0.0.1 datong.bbs.jiaju.sina.com.cn
+#127.0.0.1 jinhua.bbs.jiaju.sina.com.cn
+#127.0.0.1 jincheng.bbs.jiaju.sina.com.cn
+#127.0.0.1 rizhao.bbs.jiaju.sina.com.cn
+#127.0.0.1 tz.bbs.jiaju.sina.com.cn
+#127.0.0.1 kaifeng.bbs.jiaju.sina.com.cn
+#127.0.0.1 maoming.bbs.jiaju.sina.com.cn
+#127.0.0.1 chengde.bbs.jiaju.sina.com.cn
+#127.0.0.1 cangzhou.bbs.jiaju.sina.com.cn
+#127.0.0.1 jilin.bbs.jiaju.sina.com.cn
+#127.0.0.1 kunming.bbs.jiaju.sina.com.cn
+#127.0.0.1 yuncheng.bbs.jiaju.sina.com.cn
+#127.0.0.1 chuzhou.bbs.jiaju.sina.com.cn
+#127.0.0.1 yancheng.bbs.jiaju.sina.com.cn
+#127.0.0.1 zhongshan.bbs.jiaju.sina.com.cn
+#127.0.0.1 ganzhou.bbs.jiaju.sina.com.cn
+
+
+
+10.207.10.253	www.mantis.com
+#127.0.0.1	www.mantis.com
+10.207.10.253	test.mantis.com
+
+
+#10.207.10.253 16.jiaju.com
+#127.0.0.1 16.jiaju.com
+#60.28.244.248 16.jiaju.com
+#127.0.0.1 shiliu.jiaju.com
+#58.83.215.21 shiliu.jiaju.com
+#10.207.10.253 shiliu.jiaju.com
+127.0.0.1 16_static.jiaju.com
+#58.83.215.21 16.jiaju.com
+#58.83.215.111 admin.16.jiaju.com
+127.0.0.1 admin.16.jiaju.com
+#10.207.10.253 admin.16.jiaju.com
+10.207.10.253 st.jiaju.com
+#127.0.0.1 st.jiaju.com
+#10.207.10.254 16.jiaju.com
+#10.207.10.254 st.jiaju.com
+58.83.215.220 test.admin.16.jiaju.com
+58.83.215.71 16.search.jiaju.com
+#10.207.0.77 16.jiaju.com
+
+
+#10.207.10.253 www.shuxinju.com
+#58.83.214.21 www.shuxinju.com
+127.0.0.1 www.shuxinju.com
+
+
+#60.28.113.124   logsys.jiaju.com
+58.83.214.220	logsys.jiaju.com
+#127.0.0.1	logsys.jiaju.com
+10.207.0.240 3306.phpmyadmin.com
+
+
+#10.207.10.253 ask.search.jiaju.com
+10.207.0.239 ask.search.jiaju.com
+#127.0.0.1 ask.jiaju.com
+#10.207.0.240 ask.jiaju.com
+#60.28.244.100 ask.jiaju.com
+#58.83.214.222 ask.jiaju.com
+#60.28.244.23 ask.jiaju.com
+#58.83.214.23 ask.jiaju.com
+58.83.214.223 ask.jiaju.com
+
+
+60.28.228.31 www.s1.jiaju.com
+60.28.228.31 admin.s1.jiaju.com
+#127.0.0.1 www.s1.jiaju.com
+#127.0.0.1 admin.s1.jiaju.com
+#10.207.10.253 www.s1.jiaju.com
+
+
+58.83.214.101 31mysql.com
+
+
+#10.207.10.253 www.xhprof.com
+127.0.0.1 www.xhprof.com
+
+
+#127.0.0.1 www.mys.com
+199.192.156.26 www.mys.com
+
+#shang.com
+127.0.0.1 www.shang.com
+
+#220.231.59.70 gw.api.sandbox.360buy.com auth.sandbox.360buy.com dev.sandbox.360buy.com passport.360buy.com#hide
+
+#new server test
+121.14.32.212 v1pai.jiaju.com
+#121.14.32.212 www.jiaju.com
+#127.0.0.1 v1pai.jiaju.com
+
+10.207.10.254 db254
+127.0.0.1 www.sina_wiki.com
+127.0.0.1 www.sina_sso.com
+#127.0.0.1 supports.jiaju.sina.com.cn
+10.207.10.254 db.jiaju.com

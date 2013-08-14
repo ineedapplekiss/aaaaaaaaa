@@ -1,5 +1,5 @@
 #ifndef DUL_H
-#define DUL_H
+#define DUL_H 1
 
 #define OK 1
 #define ERROR 0
@@ -24,8 +24,10 @@ typedef struct Node
 
 typedef struct Node *LinkList;
 
-Status InitList(LinkList *L);
-Status ListInsert(LinkList *L, int i, ElemType e);
-Status ListDelete(LinkList *L, int i);
+LinkList InitList(LinkList);
+Status dPush(LinkList, ElemType);
+Status dPop(LinkList);
+Status dShow(LinkList);
+
 
 #endif
