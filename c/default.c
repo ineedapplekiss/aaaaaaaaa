@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "dul.h"
 
-char *cmds[] = {"help","say","hello","bye","exit",NULL};
+char *cmds[] = {"list","push","pop","get","exit",NULL};
 
 int getcmd(char *cmd)
 {
@@ -21,8 +22,8 @@ int main(void)
 {
  
     char buf[1024];
-
     int ok;
+    Node *L = InitList();
 
     printf("welcome! it's my service \n");
 
@@ -36,14 +37,9 @@ int main(void)
         switch(getcmd(buf))
         {
             case -1: printf("unknow command \n");break;
-            case 0: printf("how may i help u sir \n");break;
-            case 1:
-            {
-                printf("i will say %s %x \n",&buf[3],&buf);
+            case 0: 
+                printf("%s\n",L->data); 
                 break;
-            }
-            case 2: printf("hi \n");break;
-            case 3: printf("see u later \n");ok=1;break;
             case 4: printf("go ahead! \n");ok=1;break;
         }
         fflush(stdout); 
