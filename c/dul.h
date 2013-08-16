@@ -26,9 +26,9 @@ typedef struct Node
 extern Node *InitList(void);
 extern void freeNode(Node *);
 
-//Status dPush(LinkList, ElemType);
-//Status dPop(LinkList);
-//Status dShow(LinkList);
+extern Status dPush(Node *, ElemType);
+extern ElemType dPop(Node *);
+extern Status dList(Node *);
 
 
 #endif

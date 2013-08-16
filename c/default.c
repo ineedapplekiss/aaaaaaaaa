@@ -38,7 +38,13 @@ int main(void)
         {
             case -1: printf("unknow command \n");break;
             case 0: 
-                printf("%s\n",L->data); 
+                dList(L);
+                break;
+            case 1: 
+                dPush(L,&buf[5]);
+                break;
+            case 2: 
+                printf("pop :%s\n",dPop(L));
                 break;
             case 4: printf("go ahead! \n");ok=1;break;
         }
