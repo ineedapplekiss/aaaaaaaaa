@@ -32,7 +32,8 @@ int main(void)
     ok=0;
     do
     {
-        while(fgets(buf,1023,stdin)==NULL);
+        printf("shang-server>");
+        gets(buf);
         
         switch(getcmd(buf))
         {
@@ -46,7 +47,7 @@ int main(void)
             case 2: 
                 printf("pop :%s\n",dPop(L));
                 break;
-            case 4: printf("go ahead! \n");ok=1;break;
+            case 4: printf("bye! \n");ok=1;break;
         }
         fflush(stdout); 
     }while(!ok);

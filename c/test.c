@@ -1,16 +1,20 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-int main(int argc,char *argv[])
+#include<stdio.h>
+#include<malloc.h>
+int main()
 {
-    char *a;
-    if(argc < 2)
+    int i;
+    char *p[3];
+    for(i=0;i<3;i++)
     {
-        printf("Usage:file <url>;\n");
-        exit(1);
+        p[i] = (char*)malloc(100);
+        scanf("%s",p[i]);
     }
-    a = argv[2];
-    printf("c:%s \n",a);
+
+    for(i=0;i<3;i++)
+    {
+        printf("%s\n",p[i]);
+        free(p[i]);
+        p[i] = NULL;
+    }
     return 0;
 }
-
