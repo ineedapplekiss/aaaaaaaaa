@@ -1,20 +1,11 @@
 #include<stdio.h>
 #include<malloc.h>
-int main()
+#include<string.h>
+#include<stdlib.h>
+int main(int argc,char *argv[])
 {
-    int i;
-    char *p[3];
-    for(i=0;i<3;i++)
-    {
-        p[i] = (char*)malloc(100);
-        scanf("%s",p[i]);
-    }
-
-    for(i=0;i<3;i++)
-    {
-        printf("%s\n",p[i]);
-        free(p[i]);
-        p[i] = NULL;
-    }
+    int a;
+    a = atoi(argv[1]);
+    printf("%d\n",a);
     return 0;
 }

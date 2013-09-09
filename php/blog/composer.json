@@ -1,0 +1,12 @@
+{
+    "require":{
+        "guiguiboy/php-cli-progress-bar": "dev-master",
+        "kevinlebrun/colors.php": "dev-master"
+    },
+    "config":{
+        "vendor-dir" : "packages"  
+    },
+    "autoload":{
+        "psr-0": {"Blog": "src/"}
+    }
+}
